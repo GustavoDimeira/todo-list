@@ -8,8 +8,7 @@ function completo(eventoOrigem) {
 
 let tamanhoLista = 0;
 function destacar(eventoOrigem) {
-  for (let x = 0; x < tamanhoLista; x += 1) {
-    let ta
+  for (let x = 0; x < tamanhoLista; x += 1) {   
     listaOrd.children[x].style.backgroundColor = 'white';
   }
   eventoOrigem.target.style.backgroundColor = 'gray';
@@ -30,4 +29,3 @@ function novaTarefa() {
 
 const btnCriar = document.getElementById('criar-tarefa');
 btnCriar.addEventListener('click', novaTarefa);
-let tamanho = tamanhoLista.lenght;
