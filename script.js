@@ -1,8 +1,15 @@
+function completo(eventoOrigem) {
+  if (eventoOrigem.target.classList[0] === 'completed') {
+    eventoOrigem.target.classList.remove('completed');
+  } else {
+    eventoOrigem.target.classList.add('completed');
+  }
+}
+
 let tamanhoLista = 0;
-let lista = [];
-function destacar(eventoOrigem) {  
+function destacar(eventoOrigem) {
   for (let x = 0; x < tamanhoLista; x += 1) {
-  let ta
+    let ta
     listaOrd.children[x].style.backgroundColor = 'white';
   }
   eventoOrigem.target.style.backgroundColor = 'gray';
@@ -14,10 +21,11 @@ function novaTarefa() {
   const tarefaNova = document.getElementById('texto-tarefa').value;
   li.innerHTML = tarefaNova;
   li.addEventListener('click', destacar);
+  li.addEventListener('dblclick', completo);
   listaOrd.appendChild(li);
   document.getElementById('texto-tarefa').value = '';
   tamanhoLista = listaOrd.children.length;
-  return(tamanhoLista); 
+  return (tamanhoLista);
 }
 
 const btnCriar = document.getElementById('criar-tarefa');
